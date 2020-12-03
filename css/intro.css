@@ -1,0 +1,78 @@
+#intro {
+    background-image: url(../img/bg/bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    grid-template-rows: 100vh;
+
+    display: grid;
+    grid-template-columns: auto minmax(100px, 1170px) auto;
+    grid-template-areas: ". header .";
+}
+
+    #intro > .header-wrapper {
+        grid-area: header;
+        /* background-color: royalblue; */
+        display: flex;
+        align-items: center;
+
+    }
+        #intro .header-container {
+            /* background-color: pink; */
+            width: 100%;
+            text-align: center;
+            color: var(--text-color-white);
+        }
+            #intro .header-container > h5 {
+                font-size: 45px;
+                font-weight: 900;
+            }
+
+            #intro .header-text-wrapp {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+                #intro  h1:nth-child(1) {
+                    font-family: 'Poppins', sans-serif;
+                    font-size: 45px;
+                    font-weight: 200;
+                    /* padding: 5px 0 5px 0; */
+                    margin-right: 10px;
+                }
+
+                #intro .header-container .header-text {
+                    font-size: 45px;
+                    font-weight: 600;
+                    padding: 5px 0;
+                    border-right: 2px solid #fff;
+                    text-align: left;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    display: block;
+                }
+
+                #intro .header-container .header-text.hidden {
+                    display: none;
+                }
+
+            #intro .header-container > .header-icons {
+                margin-top: 20px;
+                display: flex;
+                justify-content: center;
+                gap:5px;
+            }
+                #intro .header-container > .header-icons > i {
+                    width: 40px;
+                    height: 40px;
+                    background-color: rgba(83, 83, 83, 0.507);
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                }
+                #intro .header-container > .header-icons > i:hover {
+                    background-color: rgba(121, 121, 121, 0.507);
+                }

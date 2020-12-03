@@ -1,0 +1,61 @@
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.main-container {
+    height: 200px;
+    position: relative;
+    display: grid;
+    /* grid-template-columns: auto minmax(100px, 1170px) auto; */
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "nav"
+    "intro"
+    "about"
+    "service"
+    "portfolio"
+    "testimonials"
+    "blog"
+    "contact"
+    "footer";
+}
+
+    #nav {
+        position: absolute;
+        grid-area: nav;
+        background-color: green;
+    }
+    #intro {
+        grid-area: intro;
+        background-color: green;
+        /* background-color: var(--text-color-white); */
+        min-height: 100vh;
+    }
+    #about {
+        grid-area: about;
+        background-color: darkgrey;
+    }
+    #service {
+        grid-area: service;
+        background-color: green;
+    }
+    #portfolio {
+        grid-area: portfolio;
+        background-color: darkgrey;
+    }
+    #testimonials {
+        grid-area: testimonials;
+        background-color: green;
+    }
+    #blog {
+        grid-area: blog;
+        background-color: darkgrey;
+    }
+    #contact {
+        grid-area: contact;
+        background-color: green;
+    }
+    #footer {
+        grid-area: footer;
+        background-color: darkgrey;
+    }
