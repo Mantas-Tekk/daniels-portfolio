@@ -36,14 +36,15 @@
 
                 #intro  h1:nth-child(1) {
                     font-family: 'Poppins', sans-serif;
-                    font-size: 45px;
+                    font-size: 50px;
                     font-weight: 200;
                     /* padding: 5px 0 5px 0; */
                     margin-right: 10px;
+                    
                 }
 
                 #intro .header-container .header-text {
-                    font-size: 45px;
+                    font-size: 50px;
                     font-weight: 600;
                     padding: 5px 0;
                     border-right: 2px solid #fff;
@@ -76,3 +77,49 @@
                 #intro .header-container > .header-icons > i:hover {
                     background-color: rgba(121, 121, 121, 0.507);
                 }
+
+@media only screen and (max-width: 700px) {
+    #intro .header-text-wrapp h1   {
+        font-size: 40px;
+    }
+    
+    #intro .header-container .header-text {
+        font-size: 40px;
+    }
+
+    #intro .header-container > h5 {
+        font-size: 40px;
+        font-weight: 900;
+    }
+}
+@media only screen and (max-width: 500px) {
+    #intro .header-text-wrapp h1   {
+        font-size: 30px;
+    }
+    
+    #intro .header-container .header-text {
+        font-size: 30px;
+    }
+
+    #intro .header-container > h5 {
+        font-size: 30px;
+        font-weight: 900;
+    }
+}
+@media only screen and (max-width: 420px) {
+    #intro .header-text-wrapp {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+
+    #intro  h1:nth-child(1) {
+        margin-right: 0;    
+    }
+
+    #intro .header-container .header-text {
+        margin: 0 auto 0 auto;
+    }
+
+
+}

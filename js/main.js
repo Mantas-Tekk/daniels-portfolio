@@ -1,23 +1,96 @@
 
 // import leftProgressBars from '../data/progresBarData.js';
+let timer3 = null;
 
-console.log("Hello");
+let a = [
+    getTextWidth("Tekknow Melowski", "bold 51px arial"),
+    getTextWidth("Developer", "bold 52px arial"),
+    getTextWidth("Designer", "bold 52px arial")];
 
-headerAnimation();
+let b = [
+    getTextWidth("Tekknow Melowski", "bold 41px arial"),
+    getTextWidth("Developer", "bold 42px arial"),
+    getTextWidth("Designer", "bold 42px arial")];
 
-function headerAnimation() {
+let c = [
+    getTextWidth("Tekknow Melowski", "bold 31px arial"),
+    getTextWidth("Developer", "bold 32px arial"),
+    getTextWidth("Designer", "bold 32px arial")];
+
+let introElement = document.getElementById("body");
+// console.log(introElement);
+window.addEventListener("resize", function(event) {
+    console.log(introElement.offsetWidth);
+
+    if(introElement.offsetWidth > 700) {
+        console.log("First shit");
+        if(timer3 != null) 
+            clearInterval(timer3);
+        resetAnimation(a)
+        headerAnimation(a);
+    }
+    if(introElement.offsetWidth < 700 && introElement.offsetWidth > 500) {
+        console.log("Second shit");
+        if(timer3 != null)
+            clearInterval(timer3);
+        resetAnimation(b)
+        headerAnimation(b);
+
+    }
+    if(introElement.offsetWidth < 500) {
+        console.log("Third shit");
+        if(timer3 != null)
+            clearInterval(timer3);
+        resetAnimation(c)
+        headerAnimation(c);
+    }
+
+});
+
+window.addEventListener('load', (event) => {
+    if(introElement.offsetWidth > 700) {
+        resetAnimation(a)
+        headerAnimation(a)
+    }
+    if(introElement.offsetWidth < 700 && introElement.offsetWidth > 500) {
+        resetAnimation(b)
+        headerAnimation(b) 
+    }
+    if(introElement.offsetWidth < 500) {
+        resetAnimation(c)
+        headerAnimation(c) 
+    }
+  });
+
+
+
+function resetAnimation(sizes) {
+    let nodeList = document.querySelectorAll(".header-text");
+    let index = 0;
+    nodeList.forEach(element => {
+        if(index == 0) {
+            element.style.width = sizes[0] + "px";
+            element.classList.remove("hidden");
+        } else {
+            element.style.width = 0 + "px";
+            element.classList.add("hidden");
+        }
+        index++;
+    });
+}
+
+function headerAnimation(sizes) {
+    let a = sizes
     let index = 0;
 
-    const timer3 = setInterval(function () {
+    timer3 = setInterval(function () {
         let nodeList = document.querySelectorAll(".header-text");
-        // element width
-        let a = [408, 225, 210];
 
         let curentNumber = nodeList[index].style.width;
         curentNumber = curentNumber.replace("px", "");
 
-        let totalTime = 1000;
-        let fps = 30;
+        let totalTime = 500;
+        let fps = 60;
         const timegap = 1000 / fps;
         const totalFrames = totalTime / 1000 * fps;
 
@@ -33,21 +106,33 @@ function headerAnimation() {
                 if (index > 2)
                     index = 0;
                 nodeList[index].classList.remove("hidden");
+
                 const timer2 = setInterval(function () {
 
                     curentNumber += a[index] / totalFrames;
                     if (curentNumber >= a[index]) {
                         clearInterval(timer2);
                         nodeList[index].style.width = a[index] + "px";
+                    } else {
+                        nodeList[index].style.width = curentNumber + "px";
                     }
-                    nodeList[index].style.width = curentNumber + "px";
                 }, timegap)
+                
             }
             nodeList[index].style.width = curentNumber + "px";
         }, timegap);
 
     }, 4000)
-
 }
+
+function getTextWidth(text, font) {
+    // re-use canvas object for better performance
+    var canvas = getTextWidth.canvas || (getTextWidth.canvas = document.createElement("canvas"));
+    var context = canvas.getContext("2d");
+    context.font = font;
+    var metrics = context.measureText(text);
+    return metrics.width;
+}
+
 
 
