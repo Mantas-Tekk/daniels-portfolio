@@ -92,7 +92,7 @@
         font-weight: 900;
     }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 520px) {
     #intro .header-text-wrapp h1   {
         font-size: 30px;
     }

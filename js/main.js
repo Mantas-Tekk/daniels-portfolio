@@ -1,3 +1,11 @@
+// import rendering functions
+import navBar from './navBar.js';
+
+/*************************
+ * NAVIGATION VAR
+ *************************/
+navBar(".nav-burger-menu", ".nav-burger");
+
 
 // import leftProgressBars from '../data/progresBarData.js';
 let timer3 = null;
@@ -18,19 +26,18 @@ let c = [
     getTextWidth("Designer", "bold 32px arial")];
 
 let introElement = document.getElementById("body");
-// console.log(introElement);
+
 window.addEventListener("resize", function(event) {
-    console.log(introElement.offsetWidth);
 
     if(introElement.offsetWidth > 700) {
-        console.log("First shit");
+
         if(timer3 != null) 
             clearInterval(timer3);
         resetAnimation(a)
         headerAnimation(a);
     }
     if(introElement.offsetWidth < 700 && introElement.offsetWidth > 500) {
-        console.log("Second shit");
+
         if(timer3 != null)
             clearInterval(timer3);
         resetAnimation(b)
@@ -38,7 +45,7 @@ window.addEventListener("resize", function(event) {
 
     }
     if(introElement.offsetWidth < 500) {
-        console.log("Third shit");
+
         if(timer3 != null)
             clearInterval(timer3);
         resetAnimation(c)
