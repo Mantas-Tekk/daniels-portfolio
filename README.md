@@ -3,8 +3,8 @@
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 [![HitCount](http://hits.dwyl.com/Tekknow69/daniels-portfolio.svg)](http://hits.dwyl.com/Tekknow69/daniels-portfolio)
 
-# Leverage
-### 17 group leverage website project
+# Daniels
+### 17 group Daniels website project
 
 This project is for educational purposes only. Pull request are welcome. Thank you for your cooperation!
 
