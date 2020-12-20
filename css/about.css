@@ -11,6 +11,7 @@
         grid-template-columns: 1fr 1.5fr;
         grid-template-areas: "left right";
         /* background-color:green; */
+        padding: 0 50px;
     }
         #about > .about_wrapper > .about_right {
             grid-area: right;
@@ -30,10 +31,63 @@
                     font-weight: 600;
                 }
 
-            #about .about_right > .loaders {}
-                #about .loaders > .loader_bacgkround {}
-                    #about .loader_bacgkround > .loader_loader {}
-                        #about .loader_loader p {}
+            #about .about_right > .loaders {
+                /* background-color: pink; */
+            }
+                #about .loaders > .loader_background {
+                    background-color: rgba(224, 224, 224, 0.349);
+                    margin: 20px 0;
+                    height: 22px;
+                    border-radius: 8px;
+                    box-shadow: -5px 5px 10px inset  rgba(66, 66, 66, 0.178);
+                    overflow: hidden;
+                }
+                    #about .loader_background > .loader_loader {
+                        height: 100%;
+                        width: 50%;
+                        background-color: black;
+                        display: flex;
+                        align-items: center;
+                        border-radius: 8px;
+                    }
+                        #about .loader_loader p {
+                            color:#fff;
+                            margin-left: 10px;
+                            font-size: 13px;
+                            width: 100%;
+                        }
+                        #about .loader_loader p > span {
+                            float: right;
+                            margin-right: 10px;
+                            font-weight: 100;
+                        }
+
+
+            #about .about_buttons {
+                display: flex;
+                align-self: baseline;
+            }
+                #about .about_buttons > a {
+                    margin-right: 10px;
+                    padding: 10px 25px;
+                    border: 2px solid black;
+                }
+                #about .about_buttons > a:nth-child(1) {
+                    background-color: black;
+                    color: #fff;
+                }
+                #about .about_buttons > a:nth-child(1):hover {
+                    background-color: #fff;
+                    color:black;
+                }
+                #about .about_buttons > a:nth-child(2) {
+                    background-color: #fff;
+                    color:black;
+                }
+                #about .about_buttons > a:nth-child(2):hover {
+                    background-color: black;
+                    color: #fff;
+                }
 
         #about > .about_wrapper > .about_left {
             grid-area: left;
