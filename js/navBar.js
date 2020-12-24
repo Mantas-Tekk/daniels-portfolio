@@ -1,9 +1,6 @@
 
 function navbar(selector, burgerSelector) {
-    console.log("This is nav bar!");
-    console.log("selector "+selector);
-
-
+    
     let elementBurger = document.querySelector(burgerSelector);
 
     elementBurger.addEventListener("click", function() {

@@ -25,13 +25,10 @@ body {
     }
     #intro {
         grid-area: intro;
-        background-color: green;
-        /* background-color: var(--text-color-white); */
         min-height: 100vh;
     }
     #about {
         grid-area: about;
-        background-color: darkgrey;
     }
     #service {
         grid-area: service;
