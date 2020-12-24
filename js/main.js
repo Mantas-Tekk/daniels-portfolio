@@ -6,6 +6,41 @@ import navBar from './navBar.js';
  *************************/
 navBar(".nav-burger-menu", ".nav-burger");
 
+/*************************
+ * ABOUT
+ *************************/
+function about() {
+
+}
+
+window.addEventListener("scroll", function(event) {
+    let elem = document.getElementById("loaders");
+    // console.log(elem.clientHeight);
+    // console.log(window.pageYOffset + window.innerHeight);
+    // console.log(document.querySelector(".loaders").offsetTop);
+    let nodeListA
+
+    let singleRun = true,
+        isVisible = false;
+
+    if (document.querySelector(".loaders").offsetTop < window.pageYOffset + window.innerHeight) {
+        isVisible = true
+    }
+    
+    if(singleRun && isVisible) {
+        singleRun = false;
+        nodeListA = document.querySelectorAll(".loader_loader");
+        // console.log(nodeListA);
+
+        let l = 1;
+        nodeListA.forEach(element => {
+            element.classList.add("l"+l);
+            l++;
+        });
+    } 
+
+})
+
 
 // import leftProgressBars from '../data/progresBarData.js';
 let timer3 = null;

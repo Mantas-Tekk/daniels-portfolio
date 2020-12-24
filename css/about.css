@@ -44,22 +44,78 @@
                 }
                     #about .loader_background > .loader_loader {
                         height: 100%;
-                        width: 50%;
+                        width: 0%;
                         background-color: black;
                         display: flex;
                         align-items: center;
                         border-radius: 8px;
                     }
+
+                    #about .loader_background > .loader_loader.l1 {
+                        width: 70%;
+
+                        animation: fill1 3.5s;
+                        animation-timing-function: cubic-bezier(.16,.31,.36,.91);
+                        animation-fill-mode: forwards;
+                        /* animation-delay: 1s; */
+                    }
+                    #about .loader_background > .loader_loader.l2 {
+                        width: 80%;
+
+                        animation: fill2 3.5s;
+                        animation-timing-function: cubic-bezier(.16,.31,.36,.91);
+                        animation-fill-mode: forwards;
+                        /* animation-delay: 1s; */
+                    }
+                    #about .loader_background > .loader_loader.l3 {
+                        width: 60%;
+    
+                        animation: fill3 3.5s;
+                        animation-timing-function: cubic-bezier(.16,.31,.36,.91);
+                        animation-fill-mode: forwards;
+                        /* animation-delay: 1s; */
+                    }
+
+                    @keyframes fill1 {
+                        0% {
+                            width: 0;
+                        }
+                        100% {
+                            width: 70%;
+                        }
+                    }
+                    @keyframes fill2 {
+                        0% {
+                            width: 0;
+                        }
+                        100% {
+                            width: 80%;
+                        }
+                    }
+                    @keyframes fill3 {
+                        0% {
+                            width: 0;
+                        }
+                        100% {
+                            width: 60%;
+                        }
+                    }
                         #about .loader_loader p {
+                            position: relative;
                             color:#fff;
                             margin-left: 10px;
                             font-size: 13px;
                             width: 100%;
+                            white-space: nowrap;
+                            overflow: hidden;
                         }
                         #about .loader_loader p > span {
+                            position: absolute;
                             float: right;
                             margin-right: 10px;
                             font-weight: 100;
+                            top: 0;
+                            right: 0;
                         }
 
 
@@ -100,3 +156,24 @@
                 width: 60%;
                 height: auto;
             }
+
+@media only screen and (max-width: 800px){
+    #about > .about_wrapper {
+        margin: 30px 0;
+        grid-area: about_wrapper;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "left"
+        "right";
+        /* background-color:green; */
+        padding: 0 10px;
+    }
+    #about .about_left > img {
+        object-fit: contain;
+        width: 60%;
+        height: auto;
+        margin:20px 0;
+    }
+}
+            
