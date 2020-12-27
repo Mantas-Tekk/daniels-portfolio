@@ -32,7 +32,6 @@ body {
     }
     #service {
         grid-area: service;
-        background-color: green;
     }
     #portfolio {
         grid-area: portfolio;
