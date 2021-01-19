@@ -1,0 +1,157 @@
+#contact {
+    display: grid;
+    grid-template-columns: calc(50% - 585px) minmax(100px, 1170px) calc( 50% - 585px);
+    grid-template-areas: ". contact_wrapper .";
+    background: #f7f7f7;
+}
+
+    #contact > .contact_wrapper {
+        margin: 100px 0;
+        grid-area: contact_wrapper;
+        padding: 0 50px;
+        grid-gap: 15px;
+        position: relative;
+    }
+        #contact .contact_wrapper > h2 {
+            position: absolute;
+            top:0;
+            left: 50%;
+            transform: translate(-50%);
+            font-weight: 800;
+            font-size: 35px;
+            text-align: center;
+            z-index: 3;
+        }
+        #contact .contact_wrapper > h2:before {
+            content: '';
+            width: 100%;
+            height: 30px;
+            background-image: url(../img/dots.png);
+            background-repeat: repeat;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            z-index: -1;
+        }
+
+        #contact .group_icon {
+            margin-top:100px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+            #contact .group_icon > .contact_icon {
+                text-align: center;
+            }
+                #contact .contact_icon > i {
+                    background-color: rgb(238, 238, 238);
+                    padding: 25px;
+                    font-size: 25px;
+                    border-radius: 999999px;
+                }
+                #contact .contact_icon:hover > i {
+                    background-color: black;
+                    color: rgb(238, 238, 238);
+                    transition: color 0.7s, background-color 0.7s;
+                }
+                #contact .contact_icon > h4 {
+                    margin-top: 10px;
+                }
+                #contact .contact_icon > p {
+                    margin-top: 10px;
+                    color:rgb(80, 80, 80);
+                }
+        #contact .form {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: 
+            "name email"
+            "textarea textarea";
+            gap: 30px;
+        }
+            #contact .form > input {
+                padding: 8px 5px;
+                border-radius: 5px;
+                outline: none;
+                border: none;
+                background-color:#ffff;
+            }
+            #contact .form > input::-webkit-input-placeholder {
+                font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+            }
+            #contact .form > input:-ms-input-placeholder {
+                font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+            }
+            #contact .form > input::placeholder {
+                font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+            }
+            #contact .form > textarea::-webkit-input-placeholder{
+                font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+            }
+            #contact .form > textarea:-ms-input-placeholder {
+                font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+            }
+            #contact .form > textarea::placeholder {
+                font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+            }
+
+            #contact .form > input[type=text] {
+                grid-area: name;
+            }
+            #contact .form > input[type=email] {
+                grid-area: email;
+            }
+            #contact .form > textarea {
+                grid-area: textarea;
+                outline: none;
+                border: none;
+                background-color: #fff;
+                border-radius: 5px;
+                padding: 8px 5px;
+                resize: none;
+            }
+            #contact .form > button {
+                color:#ffff;
+                background-color: black;
+                border: none;
+                outline: none;
+                padding: 10px 5px;
+                width: 140px;
+                border-radius: 5px;
+                border: 1px black solid;
+            }
+            #contact .form > button:hover {
+                color:black;
+                background-color: #fff;;
+                border: none;
+                outline: none;
+                padding: 10px 5px;
+                width: 140px;
+                border-radius: 5px;
+                border: 1px black solid;
+                transition: color 0.7s, background-color 0.7s;
+            }
+
+@media only screen and (max-width: 1000px){
+    #contact .group_icon {
+        margin-top:100px;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+        #contact .group_icon > .contact_icon {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+    #contact .form {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "name"
+        "email"
+        "textarea";
+    }
+}
+
+
+    

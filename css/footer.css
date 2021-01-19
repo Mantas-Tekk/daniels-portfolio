@@ -1,0 +1,14 @@
+#footer {
+    display: grid;
+    grid-template-columns: calc(50% - 585px) minmax(100px, 1170px) calc( 50% - 585px);
+    grid-template-areas: ". footer_wrap .";
+    background-color:black;   
+}
+
+    #footer > .footer_wrapper {
+        grid-area: footer_wrap;
+        text-align: center; 
+        padding: 30px 0 30px; 
+        color: darkgrey;
+        font-size: 14px;
+    }

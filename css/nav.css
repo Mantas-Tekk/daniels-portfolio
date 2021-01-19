@@ -8,6 +8,9 @@
     grid-template-columns: calc(50% - 585px) minmax(100px, 1170px) calc( 50% - 585px);
     grid-template-rows: 45px;
     grid-template-areas: ". nav-container .";
+    background-color: transparent;
+    z-index: 100;
+    padding-bottom: 20px;
 }
 
     #nav-container {
@@ -55,7 +58,7 @@
         }
         #nav-container > .nav-burger-menu {
             position: absolute;
-            top:70px;
+            top:45px;
             left: 0;
             right: 0;
             display: flex;
@@ -65,9 +68,9 @@
         }
             #nav-container > .nav-burger-menu > a {
                 text-decoration: none;
-                color: black;
+                color: black !important;
                 background-color: #fff;
-                padding: 16px 0;
+                padding: 18px 0;
             }
             #nav-container > .nav-burger-menu > a:hover {
                 background-color: #68b6e6
@@ -88,9 +91,28 @@
                 padding-top: 24px;
             }
 
-            #nav-container .nav-items > a:nth-child(1) {
-                border-bottom: 2px solid #fff;
+            #nav-container .nav-items > .active {
+                border-bottom: 2px solid black;
             }
+
+
+            /* #nav-container .nav-items > .active::after {
+                content: "";
+                position: absolute;
+                height: 20px;
+                width: 0%;
+                bottom: 0;
+                left: 0;
+                border-bottom: 2px solid black;
+                animation-name: bottom_border2;
+                animation-duration: 1s;
+                transition: width 1s;
+            } */
+            
+            /* @keyframes bottom_border2 {
+                from {width: 100%;}
+                to {width: 0%;}
+            } */
 
 
 @media only screen and (max-width: 660px) {
