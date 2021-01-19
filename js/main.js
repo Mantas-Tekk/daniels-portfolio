@@ -6,18 +6,143 @@ import navBar from './navBar.js';
  *************************/
 navBar(".nav-burger-menu", ".nav-burger");
 
+let nav = document.getElementById("nav");
+let barIcon = document.getElementById("burger");
+let links = document.querySelectorAll("#nav a");
+
+let intro = document.getElementById("intro"),
+    about = document.getElementById("about"),
+    service = document.getElementById("service"),
+    portfo = document.getElementById("portfolio"),
+    contact = document.getElementById("contact"),
+    footer = document.getElementById("footer");
+
+let aLinkList = document.querySelectorAll(".nav-items > a");
+
+
+window.addEventListener("scroll", function(event) {
+
+    //console.log(barIcon);
+
+    //console.log(about.offsetTop);
+    if(window.pageYOffset > intro.offsetTop && window.pageYOffset < about.offsetTop){
+        aLinkList.forEach(link => {
+            if(link.classList.contains("a1")) {
+                link.classList.add("active");
+            }
+            if(!link.classList.contains("a1")) {
+                link.classList.remove("active");
+            }
+        });
+    }
+    if(window.pageYOffset > about.offsetTop - 20 && window.pageYOffset < service.offsetTop) {         
+        aLinkList.forEach(link => {
+            if(link.classList.contains("a2")) {
+                link.classList.add("active");
+            }
+            if(!link.classList.contains("a2")) {
+                link.classList.remove("active");
+            }
+        });
+    }
+    if(window.pageYOffset > service.offsetTop - 20 && window.pageYOffset < portfo.offsetTop) {
+        aLinkList.forEach(link => {
+            if(link.classList.contains("a3")) {
+                link.classList.add("active");
+            }
+            if(!link.classList.contains("a3")) {
+                link.classList.remove("active");
+            }
+        });
+    }
+    if(window.pageYOffset > portfo.offsetTop - 20 && window.pageYOffset < contact.offsetTop) {
+        aLinkList.forEach(link => {
+            if(link.classList.contains("a4")) {
+                link.classList.add("active");
+            }
+            if(!link.classList.contains("a4")) {
+                link.classList.remove("active");
+            }
+        });
+    }
+    if(window.pageYOffset > contact.offsetTop- 40 && window.pageYOffset < footer.offsetTop) {
+        aLinkList.forEach(link => {
+            if(link.classList.contains("a5")) {
+                link.classList.add("active");
+            }
+            if(!link.classList.contains("a5")) {
+                link.classList.remove("active");
+            }
+        });
+    }
+
+
+
+    if(about.offsetTop - 20  < window.pageYOffset) {
+        // console.log(window.pageYOffset + window.innerHeight);
+
+        // console.log(about.offsetTop + about.offsetHeight);
+        console.log("Navigation apearing");
+        nav.style.position = "fixed";
+        nav.style.top = 0;
+        nav.style.color= "black";
+        nav.style.backgroundColor = "#ffff";
+        barIcon.style.color ="black";
+        links.forEach(link => {
+            link.style.color = "black";
+            // if(link.classList.contains("active")) {
+            //     link.style.borderBottom = "solid black 2px";
+            // }
+        })
+
+    } else {
+        console.log("Navigation disapearing");
+        nav.style.position = "absolute";
+        barIcon.style.color ="#ffff";
+        nav.style.top = 20+"px";
+        nav.style.backgroundColor = "transparent";
+        links.forEach(link => {
+            link.style.color = "#ffff";
+            // if(link.classList.contains("active")) {
+            //     link.style.borderBottom = "solid #ffff 2px";
+            // }
+        })
+    }
+
+
+
+
+})
+
+
 /*************************
  * ABOUT
  *************************/
-function about() {
 
+
+if(document.querySelector(".loaders").offsetTop > window.pageYOffset) {
+    let nodeListA
+
+    let singleRun = true,
+        isVisible = false;
+
+    if (document.querySelector(".loaders").offsetTop < window.pageYOffset + window.innerHeight) {
+        isVisible = true
+    }
+    
+    if(singleRun && isVisible) {
+        singleRun = false;
+        nodeListA = document.querySelectorAll(".loader_loader");
+
+        let l = 1;
+        nodeListA.forEach(element => {
+            element.classList.add("l"+l);
+            l++;
+        });
+    } 
 }
 
 window.addEventListener("scroll", function(event) {
-    let elem = document.getElementById("loaders");
-    // console.log(elem.clientHeight);
-    // console.log(window.pageYOffset + window.innerHeight);
-    // console.log(document.querySelector(".loaders").offsetTop);
     let nodeListA
 
     let singleRun = true,
@@ -40,6 +165,57 @@ window.addEventListener("scroll", function(event) {
     } 
 
 })
+
+/*************************
+ * PORTFOLIO
+ *************************/
+portfolio(".portfolio_buttons > h4")
+function portfolio(selector) {
+    let element1 = document.querySelectorAll(selector);
+    
+    // element.forEach(element => {
+    //     element.addEventListener() 
+    // }) 
+
+    element1.forEach(element => {
+
+        element.addEventListener("click", function(event) {
+
+            // console.log(element.dataset.type);
+
+            let cardElements = document.querySelectorAll(".port_card");
+
+            //console.log(cardElements);
+
+            cardElements.forEach(ele => {
+                if(element.dataset.type == "all") {
+                    ele.classList.remove("hide");
+                } else if(!ele.classList.contains(element.dataset.type)) {
+                    ele.classList.add("hide");
+                } else {
+                    if(ele.classList.contains("hide")) {
+                        ele.classList.remove("hide");
+                    }
+                } 
+            })
+
+
+
+
+            element1.forEach(ele => {
+                if(ele.classList.contains("active")) {
+                    ele.classList.remove("active")
+                    ele.classList.add("previus")
+                } else {
+                    ele.classList.remove("previus")
+                }
+            });
+
+            element.classList.add("active");
+        });
+
+    });
+}
 
 
 // import leftProgressBars from '../data/progresBarData.js';
